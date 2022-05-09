@@ -65,4 +65,10 @@ dependencies {
     //jetpack Navigation Dependency
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation 'junit:junit:4.13.2'
+
+    //Navigation test Dependency
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.4.2'
+    debugImplementation 'androidx.fragment:fragment-testing:1.4.1'
 }
