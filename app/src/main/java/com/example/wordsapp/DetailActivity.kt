@@ -39,7 +39,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        // Retrieve the LETTER from the Intent extras
+   /*     // Retrieve the LETTER from the Intent extras
         // intent.extras.getString returns String? (String or null)
         // so toString() guarantees that the value will be a String
         val letterId = intent?.extras?.getString(LETTER).toString()
@@ -53,6 +53,6 @@ class DetailActivity : AppCompatActivity() {
             DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         )
 
-        title = getString(R.string.detail_prefix) + " " + letterId
+        title = getString(R.string.detail_prefix) + " " + letterId*/
     }
 }
