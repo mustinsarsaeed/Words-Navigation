@@ -24,17 +24,16 @@ import com.example.wordsapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
-    companion object {
+   /* companion object {
         const val LETTER = "letter"
         const val SEARCH_PREFIX = "https://www.google.com/search?q="
-    }
+    }*/
 
+    //Implement WordListFragment 9) With all this functionality moved into WordListFragment,
+    // you can now delete the code from DetailActivity. All that should be left is the onCreate() method
+    //Remove DetailActivity and activity_detail and remove from manifest file
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Retrieve a binding object that allows you to refer to views by id name
-        // Names are converted from snake case to camel case.
-        // For example, a View with the id word_one is referenced as binding.wordOne
         val binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

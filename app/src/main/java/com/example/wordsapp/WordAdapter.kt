@@ -84,6 +84,8 @@ class WordAdapter(private val letterId: String, context: Context) :
         // Set the text of the WordViewHolder
         holder.button.text = item
         holder.button.setOnClickListener {
+            //Implement WordListAdapter 3) Similarly, in WordAdapter you need to update the onClickListener() where you navigate to
+            // the search results for the word, replacing DetailActivity.SEARCH_PREFIX with WordListFragment.SEARCH_PREFIX.
             val queryUrl : Uri = Uri.parse("${WordListFragment.SEARCH_PREFIX}${item}")
             val intent = Intent(Intent.ACTION_VIEW, queryUrl)
             context.startActivity(intent)

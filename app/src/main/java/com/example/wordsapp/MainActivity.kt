@@ -36,19 +36,25 @@ class MainActivity : AppCompatActivity() {
 /*    private lateinit var recyclerView: RecyclerView
     private var isLinearLayoutManager = true*/
 
-    //Configure MainActiviy1 ) Create a navController property. This is marked as lateinit since it will be set in onCreate.
+    //Configure Navigation MainActiviy 1 ) Create a navController property. This is marked as lateinit since it will be set in onCreate.
     private lateinit var navController: NavController
 
+    //Implement LetterListFragment 11) after add code in LetterListFragment remaining code in MainActivity is only onCreate method
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //Configure Navigation 2) Then, after the call to setContentView() in onCreate(), get a reference to the
+        // nav_host_fragment (this is the ID of your FragmentContainerView) and assign it to your navController property.
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+        //Configure Navigation 3) Then in onCreate(), call setupActionBarWithNavController(), passing in navController.
+        // This ensures action bar (app bar) buttons, like the menu option in LetterListFragment are visible
         setupActionBarWithNavController(navController)
     }
+        //Configure Navigation 4) Finally, implement onSupportNavigateUp(). Along with setting defaultNavHost to true in the XML,
+        // this method allows you to handle the up button. However, your activity needs to provide the implementation.
         override fun onSupportNavigateUp(): Boolean {
             return navController.navigateUp() || super.onSupportNavigateUp()
         }

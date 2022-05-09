@@ -25,7 +25,6 @@ import android.widget.Button
 import androidx.annotation.RequiresApi
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wordsapp.DetailActivity.Companion.LETTER
 
 /**
  * Adapter for the [RecyclerView] in [MainActivity].
@@ -66,19 +65,24 @@ class LetterAdapter :
         val item = list.get(position)
         holder.button.text = item.toString()
 
-        val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
-        holder.view.findNavController().navigate(action)
-        //this code execute when Detail and Main Activity Execute
-        /*holder.button.setOnClickListener {
+
+
+        holder.button.setOnClickListener {
+            //Perform Navigation Action 1) Delete the contents of the button's setOnClickListener().
+            // Instead, you need to retrieve the navigation action you just created. Add the following to the setOnClickListener().
+            val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
+            holder.view.findNavController().navigate(action)
             //create context
             val context = holder.view.context
             //create intent
             val intent = Intent(context,DetailActivity::class.java)
 //            call the put Extra
+            //Implement WordListFragment 2) Then in LetterAdapter, in the onClickListener() where you perform the intent,
+            // you need to update the call to putExtra(), replacing DetailActivity.LETTER with WordListFragment.LETTER.
             intent.putExtra(WordListFragment.LETTER, holder.button.text.toString())
 //            call the start activity
             context.startActivity(intent)
-        }*/
+        }
     }
 
     // Setup custom accessibility delegate to set the text read with
